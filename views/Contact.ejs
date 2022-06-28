@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%>
+<div class="sidevideo">
+  <video id="background-video" autoplay loop muted >
+<source src="FEBS.mp4" type="video/mp4">
+</video>
+</div>
+<div class="videotext">
+
+<h1 style="text-align:center;color:#66BFBF;margin:0px;font-size:8rem;"><strong>Contact Us</strong></h1>
+<p  style="color:#fff;width:50%;margin:auto;font-size:2rem;text-align:center;padding-bottom:10rem;"><strong><%=contact%></strong></p>
+<form action="mailto:Secyfebs.sg@iitbbs.ac.in?subject=Subject&body=message" method="post" enctype="text/plain" style="margin:auto;padding-bottom:20rem;width:50%;">
+  <label for="" style="font-size:2rem;color:#54BAB9;">Your Name:</label>
+  <input type="text" name="" value=""style="opacity:80%;background-color:#fff;color:#3F4E4F;"><br>
+  <label for="" style="font-size:2rem;color:#54BAB9;">EmailId:</label>
+  <input type="email" name="" value="" style="opacity:80%;background-color:#fff;color:#3F4E4F;"><br>
+  <label for="" style="font-size:2rem;color:#54BAB9;">Your College/Institution:</label>
+  <input type="text" name="" value="" style="opacity:80%;background-color:#fff;color:#3F4E4F;"><br>
+  <label for="" style="font-size:2rem;color:#54BAB9;">Did you like our previous works?</label>
+  <input type="checkbox" name="" value="" style="opacity:80%;width:2rem;height:2rem;color:#3F4E4F;"><br>
+  <label for=""style="font-size:4rem;color:#54BAB9;">Mail Us</label><br>
+  <label style="font-size:2rem;color:#54BAB9;">Subject:</label><br>
+  <textarea name="Subject" rows="2"cols="70" style="opacity:80%;background-color:#fff;color:#3F4E4F;"></textarea><br>
+  <label style="font-size:2rem;color:#54BAB9;">Body:</label><br>
+  <textarea name="Message" rows="10"cols="85" style="opacity:80%;background-color:#fff;color:#3F4E4F;"></textarea><br>
+  <input class="button btn-dark conbutton" type="submit" name="" value="SUBMIT" style="width:auto;margin-left:17rem;font-size:2rem;background-color:#383838;color:#FFF;"><br>
+</form>
+</div>
+
+<%- include('partials/footer.ejs'); -%>

@@ -1,0 +1,159 @@
+
+<%- include('partials/header'); -%>
+<div class="video" height=35rem style="padding-bottom:0;margin-bottom:0;">
+  <video autoplay muted loop width=100% height=80%
+    style="padding-bottom:0;" >
+
+    <source src="header.mp4"
+        type="video/mp4">
+</video>
+</div>
+<div class="home"  style="margin:0;padding-top:0;width:100%;">
+<h1 style="text-align:center;color:#00AF91;font-size:8rem;font-family:Playfair;margin-top:0;padding-top:0;">FEBS</h1>
+<p style="text-align:center;margin:5rem 10rem; font-size:2rem;color:#fff;"><%=startingContent%></p>
+
+<div class="div" style="margin-bottom:0px;padding-bottom:0px;">
+    <h1 style="color:#66BFBF;text-align:center;font-family:Playfair;font-size:5rem">Our Recent Blogs</h1>
+<div class="container-fluid" style="margin-bottom:0px;padding-bottom:0px;">
+<div class="row" style="padding-bottom:0px;margin-bottom:0px;">
+<% if(blogs.length>=1){%>
+
+      <div class="col-3 l3" style="margin-left:4rem;color:#fff;">
+        <% const link=("image"+(blogs.length-1)+".png");%>
+
+        <img src=<%=link%> alt="" style="height:20em;width:20em;margin-left:2rem;padding-top:1rem;">
+        <div class="col last3">
+        <div class="card" style="margin:0px; width:100%;">
+          <div class="card-header blogtitle">
+
+            <h3  style="font-size:4rem;color:#fff;"><%=blogs[blogs.length-1].title%></h3>
+          </div>
+          <div class="card-body">
+
+
+              <p style="font-size:1.5rem;color:#fff;"><%=(blogs[blogs.length-1].body).substring(0,150)%>
+
+              <h5 style="text-align:right;font-size:2rem;"><i class="fa-solid fa-user-pen"></i> <%=blogs[blogs.length-1].author%></h5>
+            <button id="myButton1"class="btn btn-lg btn-block btn-dark" style="width:auto;margin:auto;">Read More</button>
+            <script type="text/javascript">
+                document.getElementById("myButton1").onclick = function () {
+                    location.href ="/posts/<%=blogs[blogs.length-1]._id%>";
+                };
+            </script>
+          </div>
+
+
+        </div>
+        </div>
+      </div>
+      <%};%>
+<% if(blogs.length>=2){%>
+      <div class="col-3 l3">
+      <% var link="image"+(blogs.length-2)+".png";%>
+        <img src=<%=link%> alt="" style="height:20em;width:20em;margin-left:2rem;padding-top:1rem;">
+        <div class="col last3">
+        <div class="card">
+          <div class="card-header blogtitle">
+
+            <h3   style="font-size:4rem;color:#fff;"><%=blogs[blogs.length-2].title%></h3>
+          </div>
+          <div class="card-body">
+
+
+            <p style="font-size:1.5rem;color:#fff;"><%=(blogs[blogs.length-2].body).substring(0,150)%>
+
+            <h5 style="text-align:right;font-size:2rem;"><i class="fa-solid fa-user-pen"></i> <%=blogs[blogs.length-2].author%></h5>
+
+<button id="myButton2"class="btn btn-lg btn-block btn-dark "style="width:auto;margin:auto;">Read More</button>
+
+<script type="text/javascript">
+    document.getElementById("myButton2").onclick = function () {
+        location.href ="/posts/<%=blogs[blogs.length-2]._id%>";
+    };
+</script>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+      <%};%>
+<% if(blogs.length>=3){%>
+      <div class="col-3 l3">
+        <% var link="image"+(blogs.length-3)+".png";%>
+        <img src=<%=link%> alt="" style="height:20em;width:20em;margin-left:2rem;padding-top:1rem;">
+
+        <div class="col last3">
+          <div class="card">
+            <div class="card-header blogtitle" >
+
+              <h3   style="font-size:4rem;color:#fff;"><%=blogs[blogs.length-3].title%></h3>
+            </div>
+            <div class="card-body">
+
+
+              <p style="font-size:1.5rem;color:#fff;"><%=(blogs[blogs.length-3].body).substring(0,150)%>
+
+              <h5 style="text-align:right;font-size:2rem;"><i class="fa-solid fa-user-pen"></i> <%=blogs[blogs.length-3].author%></h5>
+            <button id="myButton3"class="btn btn-lg btn-block btn-dark" style="width:auto;margin:auto;">Read More</button>
+            <script type="text/javascript">
+                document.getElementById("myButton3").onclick = function () {
+                    location.href ="/posts/<%=blogs[blogs.length-3]._id%>";
+                };
+            </script>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+  <%};%>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container1"style="padding-top:0px;margin-bottom:0;">
+  <h1 style="text-align:center;padding-bottom:20px;font-family:'Rubik Moonrocks',cursive;font-size:5rem;color:#66BFBF;">Our Previous Blogs</h1>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="width:100rem;margin:auto;">
+
+
+
+<div class="carousel-inner" >
+
+<% for(var i=0;i<blogs.length;i++){%>
+<% var link="image"+i+".png";%>
+<% if(i===0){%>
+  <div class="carousel-item active"  style="padding-left:25rem;">
+<img src=<%=link%> alt="post1" width="60%" height="50%"/>
+<div class="carousel-caption">
+<h3  style="color:#fff;"><%=blogs[i].title%></h3>
+<p><%=blogs[i].body.substring(0,150)%></p>
+<a href="/posts/<%=blogs[i]._id%>">Read More...</a>
+<h4><i class="fa-solid fa-user-pen"></i> <%=blogs[i].author%></h4>
+</div>
+</div>
+
+<%}else{ %>
+  <div class="carousel-item" style="padding-left:25rem;">
+  <img src=<%=link%> alt="post other"  width="60%" height="50%" style:"margin:auto;"/>
+  <div class="carousel-caption">
+    <h3 style="color:#fff;"><%=blogs[i].title%></h3>
+    <p><%=blogs[i].body.substring(0,150)%></p>
+    <a href="/posts/<%=blogs[i]._id%>">Read More...</a>
+    <h4><i class="fa-solid fa-user-pen"></i> <%=blogs[i].author%></h4>
+  </div>
+  </div>
+      <%}%>
+    <%}%>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+<%- include('partials/footer.ejs'); -%>
